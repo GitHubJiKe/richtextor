@@ -1,34 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect, useRef } from 'react'
 import './App.css'
+import RichTextViewer from './components/RichTextViewer'
+import Header from './components/RichText/Header'
+import Link from './components/RichText/Link'
+import Paragraph from './components/RichText/Paragraph'
+import Picture from './components/RichText/Picture'
+import Code from './components/RichText/Code'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const domRef = useRef<HTMLDivElement>(null)
 
+  useEffect(() => {
+    if (domRef.current) {
+      const viewer = new RichTextViewer(domRef.current)
+
+      viewer.contentList.push(new Header(1, 'Hello World'))
+      // viewer.contentList.push(new Header(3, 'Hello World'))
+      // viewer.contentList.push(new Header(4, 'Hello World'))
+      // viewer.contentList.push(new Header(5, 'Hello World'))
+      // viewer.contentList.push(new Header(6, 'Hello World'))
+      viewer.contentList.push(new Paragraph(["欢迎使用", new Link('Baidu', 'https://www.baidu.com'), "搜索引擎,如下图所示，你点击图片试试"]))
+      viewer.contentList.push(new Picture('https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png', "baidu", "https://www.baidu.com"))
+      viewer.contentList.push(new Header(2, 'this is code'))
+      viewer.contentList.push(new Code('javascript', 'console.log("Hello World")'))
+      viewer.render()
+    }
+  }, [domRef.current])
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <div ref={domRef}></div>
+    </div>
   )
 }
 

@@ -2,13 +2,16 @@ lockfileVersion: 5.4
 
 specifiers:
   '@eslint/js': ^9.25.0
+  '@types/node': ^22.15.18
   '@types/react': ^19.1.2
   '@types/react-dom': ^19.1.2
   '@vitejs/plugin-react': ^4.4.1
+  dom-to-image: ^2.6.0
   eslint: ^9.25.0
   eslint-plugin-react-hooks: ^5.2.0
   eslint-plugin-react-refresh: ^0.4.19
   globals: ^16.0.0
+  highlight.js: ^11.11.1
   react: ^19.1.0
   react-dom: ^19.1.0
   typescript: ~5.8.3
@@ -16,11 +19,14 @@ specifiers:
   vite: ^6.3.5
 
 dependencies:
+  dom-to-image: 2.6.0
+  highlight.js: 11.11.1
   react: 19.1.0
   react-dom: 19.1.0_react@19.1.0
 
 devDependencies:
   '@eslint/js': 9.27.0
+  '@types/node': 22.15.18
   '@types/react': 19.1.4
   '@types/react-dom': 19.1.5_@types+react@19.1.4
   '@vitejs/plugin-react': 4.4.1_vite@6.3.5
@@ -30,7 +36,7 @@ devDependencies:
   globals: 16.1.0
   typescript: 5.8.3
   typescript-eslint: 8.32.1_nmipafpv3qyoz7vxmcr36r5pme
-  vite: 6.3.5
+  vite: 6.3.5_@types+node@22.15.18
 
 packages:
 
@@ -798,6 +804,12 @@ packages:
     resolution: {integrity: sha1-WWoXRyM2lNUPatinhp/Lb1bPWEE=, tarball: '@types/json-schema/download/@types/json-schema-7.0.15.tgz'}
     dev: true
 
+  /@types/node/22.15.18:
+    resolution: {integrity: sha1-L4JA9+ky9XHC1F9VW6C2w/enWWM=, tarball: '@types/node/download/@types/node-22.15.18.tgz'}
+    dependencies:
+      undici-types: 6.21.0
+    dev: true
+
   /@types/react-dom/19.1.5_@types+react@19.1.4:
     resolution: {integrity: sha1-zf4sZjdCiHNy9UgEsW6NvCa9eUo=, tarball: '@types/react-dom/download/@types/react-dom-19.1.5.tgz'}
     peerDependencies:
@@ -939,7 +951,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.27.1_@babel+core@7.27.1
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 6.3.5
+      vite: 6.3.5_@types+node@22.15.18
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1077,6 +1089,10 @@ packages:
   /deep-is/0.1.4:
     resolution: {integrity: sha1-pvLc5hL63S7x9Rm3NVHxfoUZmDE=, tarball: deep-is/download/deep-is-0.1.4.tgz}
     dev: true
+
+  /dom-to-image/2.6.0:
+    resolution: {integrity: sha1-ilA2CAiMh7HCL5A0rgMuGJiVWGc=, tarball: dom-to-image/download/dom-to-image-2.6.0.tgz}
+    dev: false
 
   /electron-to-chromium/1.5.155:
     resolution: {integrity: sha1-gJ3Qrprh24fDWODAwXwJov/EMtE=, tarball: electron-to-chromium/download/electron-to-chromium-1.5.155.tgz}
@@ -1366,6 +1382,11 @@ packages:
     resolution: {integrity: sha1-lEdx/ZyByBJlxNaUGGDaBrtZR5s=, tarball: has-flag/download/has-flag-4.0.0.tgz}
     engines: {node: '>=8'}
     dev: true
+
+  /highlight.js/11.11.1:
+    resolution: {integrity: sha1-/KBvoOWu7PbE1DcjkTX6vBUhNYU=, tarball: highlight.js/download/highlight.js-11.11.1.tgz}
+    engines: {node: '>=12.0.0'}
+    dev: false
 
   /ignore/5.3.2:
     resolution: {integrity: sha1-PNQOcp82Q/2HywTlC/DrcivFlvU=, tarball: ignore/download/ignore-5.3.2.tgz}
@@ -1763,6 +1784,10 @@ packages:
     hasBin: true
     dev: true
 
+  /undici-types/6.21.0:
+    resolution: {integrity: sha1-aR0ArzkJvpOn+qE75hs6W1DvEss=, tarball: undici-types/download/undici-types-6.21.0.tgz}
+    dev: true
+
   /update-browserslist-db/1.1.3_browserslist@4.24.5:
     resolution: {integrity: sha1-NIN33SRSFvnnBg/1CxWht0C3VCA=, tarball: update-browserslist-db/download/update-browserslist-db-1.1.3.tgz}
     hasBin: true
@@ -1780,7 +1805,7 @@ packages:
       punycode: 2.3.1
     dev: true
 
-  /vite/6.3.5:
+  /vite/6.3.5_@types+node@22.15.18:
     resolution: {integrity: sha1-/sc4eQE8nAEoyNKEUExtGUENEqM=, tarball: vite/download/vite-6.3.5.tgz}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
     hasBin: true
@@ -1820,6 +1845,7 @@ packages:
       yaml:
         optional: true
     dependencies:
+      '@types/node': 22.15.18
       esbuild: 0.25.4
       fdir: 6.4.4_picomatch@4.0.2
       picomatch: 4.0.2
