@@ -6,6 +6,8 @@ import Link from './components/RichText/Link'
 import Paragraph from './components/RichText/Paragraph'
 import Picture from './components/RichText/Picture'
 import Code from './components/RichText/Code'
+import './components/RichText/richtextor.css'
+import Reference from './components/RichText/Reference'
 
 function App() {
   const domRef = useRef<HTMLDivElement>(null)
@@ -21,8 +23,13 @@ function App() {
       // viewer.contentList.push(new Header(6, 'Hello World'))
       viewer.contentList.push(new Paragraph(["欢迎使用", new Link('Baidu', 'https://www.baidu.com'), "搜索引擎,如下图所示，你点击图片试试"]))
       viewer.contentList.push(new Picture('https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png', "baidu", "https://www.baidu.com"))
-      viewer.contentList.push(new Header(2, 'this is code'))
-      viewer.contentList.push(new Code('javascript', 'console.log("Hello World")'))
+      viewer.contentList.push(new Header(2, 'This is code'))
+      viewer.contentList.push(new Code('javascript', 'console.log("Hello World")\nconsole.log("Hello World")\n\n// 注释\n\nfunction test(){\n    console.log("Hello World")\n}'))
+      viewer.contentList.push(new Header(2, 'This is code'))
+      viewer.contentList.push(new Code('javascript', 'console.log("Hello World")\nconsole.log("Hello World")\n\n// 注释\n\nfunction test(){\n    console.log("Hello World")\n}'))
+      viewer.contentList.push(new Header(2, 'This is code'))
+      viewer.contentList.push(new Code('javascript', 'console.log("Hello World")\nconsole.log("Hello World")\n\n// 注释\n\nfunction test(){\n    console.log("Hello World")\n}'))
+      viewer.contentList.push(new Reference('John Doe', "This is content\nThis is content\nThis is content", 'https://www.baidu.com'))
       viewer.render()
     }
   }, [domRef.current])

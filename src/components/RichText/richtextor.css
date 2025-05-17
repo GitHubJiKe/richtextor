@@ -1,0 +1,115 @@
+:root {
+    --color-text: #000;
+    --color-link: #0000ff;
+    --color-paragraph: #000011;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background-color: #fff;
+}
+
+/* 标题 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.875rem;
+}
+
+/* 链接 */
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 段落 */
+p {
+    margin-bottom: 1rem;
+    color: var(--color-paragraph);
+}
+
+/* 图片 */
+img {
+    max-width: 100%;
+}
+
+/* 代码 */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.2rem;
+}
+
+:has(pre[data-lang]) {
+    position: relative;
+}
+
+pre[data-lang]::before {
+    content: attr(data-lang);
+    color: #000011;
+    font-size: 0.5rem;
+    font-weight: 600;
+    position: absolute;
+    right: 2rem;
+    background-color: #f0f0f0;
+    padding: 0.2rem 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+}
+
+
+blockquote {
+    border-left: 0.2rem solid #000011;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    color: var(--color-paragraph);
+    text-align: left;
+    padding-left: 1rem;
+    border-top-left-radius: 0.2rem;
+    border-bottom-left-radius: 0.2rem;
+}
+
+blockquote div {
+    margin-top: 1rem;
+}
+
+cite {
+    display: block;
+    text-align: right;
+}

@@ -7,7 +7,9 @@ export default class Header extends BaseRichText {
   render = (content?: BaseRichText) => {
     const children = content?.render()
     const level = this.levelVal
-    return `<h${level}>${children || this._content}</h${level}>`
+    return `<h${level} class="richtextor-header-${level}">${
+      children || this._content
+    }</h${level}>`
   }
 
   constructor(val: number, content: string) {
